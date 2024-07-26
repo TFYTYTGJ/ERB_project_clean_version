@@ -374,7 +374,6 @@ router.get('/', auth.isloginByStudent, async (req,res)=>{
             let course = await courses_c.findOne({_id:new ObjectId(courseId)});
             let user = await users_c.findOne({_id:req.user._id});
             let userTeacher = await users_c.findOne({_id:course.author});
-           // console.log(user.money, course.money)
             if (user.money >= course.money) {
                 let canBuy = true;
                 if (canBuy) {

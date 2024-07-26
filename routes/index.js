@@ -12,7 +12,6 @@ router.get('/', (req, res)=> {
 
 }).get('/logout', auth.islogin, (req, res) => {
   req.logout((err)=>{
-    console.log(req.user);
     res.redirect("/");
   })
 }).get('/*', (req, res) => {

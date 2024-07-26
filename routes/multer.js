@@ -20,7 +20,6 @@ const upload = multer({ storage: storage,
         if ((!file.originalname.match(/\.(jpg|jpeg|png)$/) || !file.mimetype.startsWith("video/")) && fileSize <= 5368709120) {
             cb(null, true)
           } else {
-            console.log(fileSize)
           req.session.messages.push("檔案過大")
           cb(null, false)
         }
